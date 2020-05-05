@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="products_box">
+        {% for product in stored_products %}
+            <div class="product_record">
+                <img src="/media/{{ product.image }}">
+                <span class="name">{{ product.name }}</span>
+                <span class="price">Цена {{ product.price }} руб.</span>
+                <span class="quantity">Осталось на складе: {{ product.quantity }}</span>
+                <a href="#" class="button">Добавить</a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -3,9 +3,7 @@ h2 {
     font-size: 30px;
 }
 .container {
-    border: 1px solid black;
     width: 1000px;
-    height: 800px;
     margin: 10px auto;
 }
 .menu {
@@ -42,19 +40,20 @@ h2 {
 }
 .product_record {
     position: relative;
-    display: block;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: flex;
     height: 60px;
-    float: none;
     margin: 10px auto;
     border: 1px solid #eaeaea;
 }
-.product_record img {
+.image img {
     float: left;
     width: 100px;
     max-height: 60px;
     border-radius: 25px;
 }
-.product_record span.name {
+.name {
     margin-top: 20px;
     margin-left: 1em;
     width: 250px;
@@ -62,7 +61,7 @@ h2 {
     display: block;
     float: left;
 }
-.product_record span.price {
+.price {
     margin-top: 20px;
     margin-left: 1em;
     width: 8em;
@@ -70,17 +69,10 @@ h2 {
     display: block;
     float: left;
 }
-.product_record span.quantity {
+.quantity {
     margin-top: 20px;
     margin-left: 1em;
     width: 12em;
-    position: relative;
-    display: block;
-    float: left;
-}
-.product_record a {
-    margin-top: 20px;
-    margin-left: 40px;
     position: relative;
     display: block;
     float: left;
@@ -105,4 +97,12 @@ h2 {
 .button:active {
     box-shadow: none;
     background-color: #d41306;
+}
+.form_box {
+    width: 500px;
+    margin: 1px auto;
+    /*border: 1px solid black;*/
+}
+.form_body {
+    text-align: center;
 }

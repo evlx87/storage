@@ -1,5 +1,5 @@
 <ul>
-    <li><a href="#">Список товаров</a></li>
-    <li><a href="#">Выбранные товары</a></li>
-    <li><a href="#">Подготовка файла CSV</a></li>
+    <li><a href="{% url 'product:index' %}">Хранилище товаров</a></li>
+    <li><a href="{% url 'product:add' %}">Добавить новый товар в хранилище</a></li>
+    <li><a href="{% url 'product:output' %}">Подготовка файла CSV</a></li>
 </ul>

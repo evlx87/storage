@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form action="{% url 'product:add' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form_box">
+        <h2>Добавить продукт в хранилище</h2>
+        <div class="form_body">{{ form.as_p }}</div>
+        <div class="form_body"><input class="form-control button" type="submit" value="Добавить"></div>
+    </div>
+</form>
+{% endblock %}

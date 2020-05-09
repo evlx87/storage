@@ -1,0 +1,57 @@
+[
+    {
+        "name": "D-Link DES-1016D/H1A",
+        "image": "product_images/dlink.jpg",
+        "price": "3200.87",
+        "quantity": "32"
+    },
+    {
+        "name": "GIGALINK GL-SW-F105",
+        "image": "product_images/gigalink.jpg",
+        "price": "630.21",
+        "quantity": "11"
+    },
+    {
+        "name": "TP_Link TL-SG105",
+        "image": "product_images/tplink_sg105.jpg",
+        "price": "1099.48",
+        "quantity": "23"
+    },
+    {
+        "name": "TP-Link TL-R470T+",
+        "image": "product_images/tplink.jpg",
+        "price": "2451.12",
+        "quantity": "21"
+    },
+    {
+        "name": "Mikrotik RB931-2nD",
+        "image": "product_images/mikrotik.jpg",
+        "price": "1299.28",
+        "quantity": "23"
+    },
+    {
+        "name": "ASUS RT-N12 С1/D1/VP",
+        "image": "product_images/asus.jpg",
+        "price": "1599.28",
+        "quantity": "63"
+    },
+    {
+        "name": "Zyxel NAS326",
+        "image": "product_images/zyxel.jpg",
+        "price": "7614.28",
+        "quantity": "41"
+    },
+    {
+        "name": "Asustor AS1002T v2",
+        "image": "product_images/asustor.jpg",
+        "price": "12799.32",
+        "quantity": "20"
+
+    },
+    {
+        "name": "Synology DiskStation DS218+",
+        "image": "product_images/synology.jpg",
+        "price": "28299.65",
+        "quantity": "36"
+    }
+]

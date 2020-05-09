@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form class="form_box" method="get">
+    <h2>Выгрузить CSV файл с товарами</h2>
+    <div class="form_body"><a class="button" href="{% url 'product:download' %}" >Выгрузить</a></div>
+</form>
+{% endblock %}

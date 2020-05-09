@@ -1,12 +1,8 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<form action="{% url 'product:output' %}" method="post" enctype="multipart/form-data">
-     <div class="form_box">
-         <h2>Выгрузить CSV файл с товарами</h2>
-         {% csrf_token %}
-         {{ form.as_p }}
-         <div class="form_body"><input class="form-control button" type="submit" value="Выгрузить"></div>
-    </div>
+<form class="form_box" method="get">
+    <h2>Выгрузить CSV файл с товарами</h2>
+    <div class="form_body"><a class="button" href="{% url 'product:download' %}" >Выгрузить</a></div>
 </form>
 {% endblock %}

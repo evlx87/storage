@@ -35,6 +35,13 @@ def add_product(request):
 
 
 def file_output(request):
+    if request.method == 'GET':
+        with open('backend/output_files/output.csv', 'w', encoding='utf-8') as file:
+            file_writer = csv.writer(file)
+            for data in Product.objects.all():
+                file_writer.writerow([data.name])
+        file.close()
+
     context = {
         'page_title': 'Подготовка файла CSV',
     }

@@ -129,3 +129,4 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /task
+/backend/product/migrations/0001_initial.py

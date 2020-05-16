@@ -2,13 +2,31 @@
 
 {% block content %}
     <div class="products_box">
-        {% for product in stored_products %}
-            <div class="product_record">
-                <div class="image"><img src="/media/{{ product.image }}"></div>
-                <div class="name">{{ product.name }}</div>
-                <div class="price">Цена {{ product.price }} руб.</div>
-                <div class="quantity">Осталось на складе: {{ product.quantity }}</div>
+        {% include "includes/products_list.html" %}
+    </div>
+    <div class="button_panel">
+        <button class="btn btn-primary" data-toggle="modal" data-target="#modal">Добавить</button>
+        <button class="btn btn-primary" onclick="location.href = '{% url 'product:download' %}'">Скачать CSV файл</button>
+    </div>
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="label">Добавить продукт</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="{% url 'product:add' %}" method="post" enctype="multipart/form-data">
+                        {% include "includes/form.html" %}
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
+                    <button type="button" class="btn btn-primary" id="add-button">Добавить</button>
+                </div>
             </div>
-        {% endfor %}
+        </div>
     </div>
 {% endblock %}

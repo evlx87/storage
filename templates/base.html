@@ -8,6 +8,8 @@
     {% endblock %}
 
     {% block css %}
+        <link href="{% static 'css/bootstrap.min.css' %}" type="text/css" rel="stylesheet" >
+        <link href="{% static 'css/gijgo.min.css' %}" type="text/css" rel="stylesheet" >
         <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" >
     {% endblock %}
 </head>
@@ -24,6 +26,13 @@
         {% endblock %}
 
         {% block footer %}
+        {% endblock %}
+
+        {% block js %}
+            <script src="{% static 'js/jquery-3.5.1.min.js' %}"></script>
+            <script src="{% static 'js/bootstrap.min.js' %}"></script>
+            <script src="{% static 'js/gijgo.min.js' %}"></script>
+            <script src="{% static 'js/script.js' %}"></script>
         {% endblock %}
     </div>
 </body>

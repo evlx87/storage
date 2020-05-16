@@ -3,8 +3,9 @@ import mimetypes
 import os
 from wsgiref.util import FileWrapper
 
-from django.http import HttpResponseRedirect, StreamingHttpResponse
+from django.http import HttpResponseRedirect, StreamingHttpResponse, JsonResponse
 from django.shortcuts import render
+from django.template.loader import render_to_string
 
 from backend.product.forms import ProductForm
 from backend.product.models import Product
@@ -32,6 +33,26 @@ def add_product(request):
         'form': form
     }
     return render(request, 'add_product.html', context)
+
+
+def add_prod(request):
+    data = dict()
+    if request.method == 'POST':
+        form = ProductForm(request.POST)
+        if form.is_valid():
+            form.save()
+            data['form_is_valid'] = True
+            products = Product.objects.all()
+            data['products_html'] = render_to_string('includes/products_list.html', {'products': products})
+        else:
+            data['form_html'] = render_to_string('includes/form.html', {'form': form}, request=request)
+
+    else:
+        data['form_is_valid'] = False
+        data['form_html'] = render_to_string('includes/form.html', {'form': ProductForm()}, request=request)
+
+    return JsonResponse(data)
+
 
 
 def file_output(request):

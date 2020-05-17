@@ -3,11 +3,11 @@
 {% block content %}
     <h2><a href="{% url 'product:index' %}">Хранилище товаров</a></h2>
     <div class="products_box">
-        {% include "includes/products_list.html" %}
+        {% include "product/list.html" %}
     </div>
     <div class="button_panel">
         <button class="btn btn-primary" data-toggle="modal" data-target="#modal">Добавить</button>
         <button class="btn btn-primary" onclick="location.href = '{% url 'product:download' %}'">Скачать CSV файл</button>
     </div>
-    {% include "includes/add_prod_form.html" %}
+    {% include "product/add_prod_form.html" %}
 {% endblock %}

@@ -16,23 +16,7 @@ def main(request):
         'page_title': 'Хранилище товаров',
         'stored_products': Product.objects.all()
     }
-    return render(request, 'index.html', context)
-
-
-# def add_product(request):
-#     if request.method == 'POST':
-#         form = ProductForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect('/')
-#     else:
-#         form = ProductForm()
-#
-#     context = {
-#         'page_title': 'Добавление нового товара',
-#         'form': form
-#     }
-#     return render(request, 'add_product.html', context)
+    return render(request, 'product/index.html', context)
 
 
 def add_prod(request):
@@ -42,13 +26,13 @@ def add_prod(request):
         if form.is_valid():
             form.save()
             data['form_is_valid'] = True
-            data['list_html'] = render_to_string('includes/products_list.html', {'products': Product.objects.all()})
+            data['list_html'] = render_to_string('product/list.html', {'stored_products': Product.objects.all()})
         else:
-            data['form_html'] = render_to_string('includes/form.html', {'form': form}, request=request)
+            data['form_html'] = render_to_string('product/form.html', {'form': form}, request=request)
 
     else:
         data['form_is_valid'] = False
-        data['form_html'] = render_to_string('includes/form.html', {'form': ProductForm()}, request=request)
+        data['form_html'] = render_to_string('product/form.html', {'form': ProductForm()}, request=request)
 
     return JsonResponse(data)
 
@@ -57,7 +41,7 @@ def file_output(request):
     context = {
         'page_title': 'Подготовка файла CSV',
     }
-    return render(request, 'output_form.html', context)
+    return render(request, 'product/output_form.html', context)
 
 
 def download(request):

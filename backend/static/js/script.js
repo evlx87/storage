@@ -9,7 +9,7 @@ $(function () {
         let form = modal.find('form');
         $.post(form.attr('action'), form.serialize(), data => {
             if (data.form_is_valid) {
-                $('table').html(data.products_html);
+                $('.products_box').html(data.list_html);
                 modal.modal('toggle');
             }
             else {

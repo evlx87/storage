@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2>Хранилище товаров</h2>
+    <h2><a href="{% url 'product:index' %}">Хранилище товаров</a></h2>
     <div class="products_box">
         {% include "includes/products_list.html" %}
     </div>
@@ -9,25 +9,5 @@
         <button class="btn btn-primary" data-toggle="modal" data-target="#modal">Добавить</button>
         <button class="btn btn-primary" onclick="location.href = '{% url 'product:download' %}'">Скачать CSV файл</button>
     </div>
-    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="label" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="label">Добавить продукт</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <form action="{% url 'product:add' %}" method="post" enctype="multipart/form-data">
-                        {% include "includes/form.html" %}
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Отмена</button>
-                    <button type="button" class="btn btn-primary" id="add-button">Добавить</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    {% include "includes/add_prod_form.html" %}
 {% endblock %}

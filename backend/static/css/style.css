@@ -32,7 +32,6 @@ h2 {
     display: block;
 }
 .products_box {
-    /*border: 1px solid black;*/
     margin: 5px auto;
     width: 90%;
     max-height: 90%;
@@ -101,8 +100,11 @@ h2 {
 .form_box {
     width: 500px;
     margin: 1px auto;
-    /*border: 1px solid black;*/
 }
 .form_body {
+    text-align: center;
+}
+.button_panel {
+    margin-top: 30px;
     text-align: center;
 }
